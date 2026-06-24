@@ -65,16 +65,21 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('Photos/RIV02694_web.jpg');
+      background-image: url('RIV02694_web.jpg');
       background-size: cover; background-position: center top;
-      filter: brightness(0.35);
+      filter: brightness(1);
       transform: scale(1.03);
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.95) 100%);
+      background: none;
     }
-    .hero-content { position: relative; z-index: 2; max-width: 860px; padding: 0 24px; }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 860px; padding: 40px 48px;
+      background: rgba(10,10,10,0.45);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
     .hero-eyebrow {
       display: inline-block; margin-bottom: 22px;
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
@@ -415,6 +420,97 @@
     </div>
   </section>
 
+  <!-- ── Testimonials ────────────────────────────────────────────────────── -->
+  <section id="testimonials" style="background: var(--black); padding: 80px 48px;">
+    <div class="section-inner">
+      <div style="text-align: center; margin-bottom: 52px;">
+        <p class="section-label">Client Testimonials</p>
+        <h2 class="section-title">What Clients <em>Are Saying</em></h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;">
+
+        <div style="background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: 40px 32px; display: flex; flex-direction: column;">
+          <div style="color: var(--gold); font-size: 11px; letter-spacing: 3px; margin-bottom: 20px;">★★★★★</div>
+          <blockquote style="font-family: var(--serif); font-size: 1.05rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.82; flex: 1;">
+            Lee is a talented and dependable photographer whose professionalism and creative eye consistently produce exceptional results. His communication, reliability, and ability to capture meaningful moments make him a valuable partner on any project.
+          </blockquote>
+          <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 14px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:1.2rem; font-style:italic; color:var(--black); flex-shrink:0;">A</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--white);">Alma</div>
+              <div style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Communications Manager — Wheeler Avenue Baptist Church</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: 40px 32px; display: flex; flex-direction: column;">
+          <div style="color: var(--gold); font-size: 11px; letter-spacing: 3px; margin-bottom: 20px;">★★★★★</div>
+          <blockquote style="font-family: var(--serif); font-size: 1.05rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.82; flex: 1;">
+            He is more than just a photographer! He is a source of vibrant energy that elevates the mood of the entire group. He doesn't simply take pictures; he beautifully captures emotions and joy.
+          </blockquote>
+          <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 14px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:1.2rem; font-style:italic; color:var(--gold); flex-shrink:0;">I</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--white);">Ivan</div>
+              <div style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Event Attendee</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: 40px 32px; display: flex; flex-direction: column;">
+          <div style="color: var(--gold); font-size: 11px; letter-spacing: 3px; margin-bottom: 20px;">★★★★★</div>
+          <blockquote style="font-family: var(--serif); font-size: 1.05rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.82; flex: 1;">
+            The pictures you took captured the seminar beautifully. Your energy throughout made it even more special. Thank you for these memories Lee!
+          </blockquote>
+          <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 14px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:1.2rem; font-style:italic; color:var(--gold); flex-shrink:0;">A</div>
+            <div>
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--white);">Ahmad</div>
+              <div style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Event Attendee</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="testimonials.html" style="font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 3px;">Read All Testimonials →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Process ──────────────────────────────────────────────────────────── -->
+  <section id="process">
+    <div class="section-inner">
+      <div class="process-header">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">Booking Your <em>Event Coverage</em></h2>
+        <p class="section-body">Simple, straightforward, and stress-free. Here's what to expect when you hire Lee Rivers as your Houston corporate event photographer.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Inquiry</h3>
+          <p class="step-body">Submit your event details — date, venue, type of coverage, and expected attendance. Response within 48 hours.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Consultation</h3>
+          <p class="step-body">A brief consultation to discuss expectations and to understand your goals, priorities, your event schedule, key moments, stakeholders, and any specific shots your team needs for PR or marketing.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Event Day</h3>
+          <p class="step-body">Lee arrives early, works the full event, and captures every moment — candid, editorial, and directed shots.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Delivery</h3>
+          <p class="step-body">Edited, high-resolution images delivered via private gallery. 48–96 hours turnaround and/or same-day social media selects available upon request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Services ────────────────────────────────────────────────────────── -->
   <section id="services">
     <div class="section-inner">
@@ -541,39 +637,6 @@
           <div class="kw-icon">📍</div>
           <h3 class="kw-title">Serving All of Greater Houston</h3>
           <p class="kw-body">Based in Houston and available across the metro — Downtown, The Woodlands, Energy Corridor, Sugar Land, Katy, Galleria, and all major event corridors. Your event photography services, Houston-wide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Process ──────────────────────────────────────────────────────────── -->
-  <section id="process">
-    <div class="section-inner">
-      <div class="process-header">
-        <p class="section-label">How It Works</p>
-        <h2 class="section-title">Booking Your <em>Event Coverage</em></h2>
-        <p class="section-body">Simple, straightforward, and stress-free. Here's what to expect when you hire Lee Rivers as your Houston corporate event photographer.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <h3 class="step-title">Inquiry</h3>
-          <p class="step-body">Submit your event details — date, venue, type of coverage, and expected attendance. Response within 48 hours.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <h3 class="step-title">Consultation</h3>
-          <p class="step-body">A brief consultation to discuss expectations and to understand your goals, priorities, your event schedule, key moments, stakeholders, and any specific shots your team needs for PR or marketing.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <h3 class="step-title">Event Day</h3>
-          <p class="step-body">Lee arrives early, works the full event, and captures every moment — candid, editorial, and directed shots.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <h3 class="step-title">Delivery</h3>
-          <p class="step-body">Edited, high-resolution images delivered via private gallery. 48–96 hours turnaround and/or same-day social media selects available upon request.</p>
         </div>
       </div>
     </div>
