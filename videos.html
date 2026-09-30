@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Films & Videos | Lee Rivers — Corporate Event Photographer Houston TX</title>
+  <meta name="description" content="Event recap films, highlight reels, and behind-the-scenes videos by Lee Rivers — Houston corporate event photographer and videographer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black:   #0a0a0a;
+      --dark:    #111111;
+      --card:    #161616;
+      --border:  #2a2a2a;
+      --white:   #ffffff;
+      --offwhite:#f0ede8;
+      --muted:   #999999;
+      --gold:    #c9a84c;
+      --gold-lt: #e8c96a;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--offwhite); opacity: 0.8; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--black) !important; opacity: 1 !important;
+      padding: 10px 22px; font-size: 0.72rem !important; letter-spacing: 0.16em;
+      font-weight: 600 !important; transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 72px;
+      min-height: 400px;
+      position: relative;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.squarespace-cdn.com/content/v1/658e525c6f3fe00284fcaaad/1780360336681-LH11MVMSBOY0P53Z6EQ7/2023_BOTW+Fashion-174.jpg');
+      background-size: cover; background-position: center top;
+      filter: brightness(0.25);
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.8) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 2; max-width: 720px; padding: 72px 24px 60px; }
+    .hero-eyebrow {
+      display: inline-block; margin-bottom: 22px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 7px 20px;
+    }
+    .page-hero h1 {
+      font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300;
+      line-height: 1.15; color: var(--white); margin-bottom: 20px;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--gold); }
+    .page-hero p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 500px; margin: 0 auto; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+      line-height: 1.2; color: var(--white); margin-bottom: 20px;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .gold-rule { width: 48px; height: 1px; background: var(--gold); margin: 20px 0 48px; }
+
+    /* ── VIDEO FRAME (shared by featured + cards) ── */
+    .v-frame {
+      position: relative; width: 100%; aspect-ratio: 16 / 9;
+      background: #000 center / cover no-repeat;
+      overflow: hidden;
+    }
+    .v-frame.vertical { aspect-ratio: 9 / 16; }
+    .v-frame iframe, .v-frame video {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000;
+    }
+    .v-play {
+      position: absolute; inset: 0; width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(to bottom, rgba(10,10,10,0) 40%, rgba(10,10,10,0.55) 100%);
+      transition: background 0.25s;
+    }
+    .v-play:hover { background: rgba(10,10,10,0.25); }
+    .v-play-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: rgba(10,10,10,0.55);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .v-play:hover .v-play-icon { background: var(--gold); transform: scale(1.06); }
+    .v-play-icon svg { width: 22px; height: 22px; margin-left: 4px; fill: var(--gold); transition: fill 0.25s; }
+    .v-play:hover .v-play-icon svg { fill: var(--black); }
+    .v-duration {
+      position: absolute; right: 12px; bottom: 12px;
+      font-size: 0.7rem; letter-spacing: 0.08em; padding: 3px 8px;
+      background: rgba(10,10,10,0.8); color: var(--offwhite);
+    }
+
+    /* Placeholder shown until a video is added */
+    .v-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+      background:
+        repeating-linear-gradient(135deg, rgba(201,168,76,0.03) 0 14px, transparent 14px 28px),
+        var(--card);
+      border: 1px dashed rgba(201,168,76,0.3);
+      color: var(--muted); text-align: center; padding: 20px;
+    }
+    .v-placeholder svg { width: 34px; height: 34px; stroke: var(--gold); opacity: 0.6; fill: none; }
+    .v-placeholder span { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; }
+
+    /* ── FEATURED ── */
+    #featured { background: var(--dark); }
+    .featured-grid {
+      display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: center;
+    }
+    .featured-grid.is-vertical { grid-template-columns: minmax(0, 360px) 1fr; }
+    .featured-media { border-top: 2px solid var(--gold); }
+    .v-meta {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .featured-copy h3 {
+      font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 300;
+      line-height: 1.2; margin-bottom: 18px;
+    }
+    .featured-copy p { color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.8; margin-bottom: 18px; }
+    .featured-client { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
+
+    /* ── LIBRARY ── */
+    #library { background: var(--black); }
+    .library-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .library-head .gold-rule { margin-bottom: 0; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 9px 18px; border: 1px solid var(--border); color: var(--offwhite);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--black); }
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .v-card {
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .v-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-3px); }
+    .v-card .v-play-icon { width: 56px; height: 56px; }
+    .v-card .v-play-icon svg { width: 18px; height: 18px; }
+    .v-card-body { padding: 24px 24px 28px; flex: 1; }
+    .v-card-body .v-meta { margin-bottom: 10px; }
+    .v-card h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
+    .v-card p { font-size: 0.88rem; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.7; }
+    .v-empty { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 60px 0; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(5,5,5,0.94);
+      display: none; align-items: center; justify-content: center;
+      padding: 72px 48px 48px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { width: 100%; max-width: 1100px; }
+    .lightbox-inner.vertical { max-width: min(420px, calc((100vh - 200px) * 9 / 16)); }
+    .lightbox-title { margin-top: 18px; font-family: var(--serif); font-size: 1.4rem; font-weight: 300; }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--offwhite); padding: 10px 0;
+    }
+    .lightbox-close:hover { color: var(--gold); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--dark);
+      padding: 100px 48px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+    .cta-section .section-title { margin-bottom: 18px; }
+    .cta-section p { color: rgba(255,255,255,0.55); margin-bottom: 44px; font-size: 1rem; line-height: 1.8; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: var(--black);
+      padding: 15px 36px; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.4); color: var(--white);
+      padding: 15px 36px; font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 48px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 960px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-grid, .featured-grid.is-vertical { grid-template-columns: 1fr; gap: 32px; }
+      .featured-grid.is-vertical .featured-media { max-width: 360px; }
+    }
+    @media (max-width: 860px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 64px 24px; }
+      .cta-section { padding: 64px 24px; }
+      .lightbox { padding: 64px 16px 24px; }
+      footer { padding: 32px 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Lee<span>·</span>Rivers</a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#gallery">Portfolio</a>
+      <a href="videos.html" class="active">Videos</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#process">Process</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="https://forms.gle/7vLqgYg5Mn2J484h8" target="_blank" class="nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="hero-eyebrow">Event Films</div>
+      <h1>See the Moments<br><em>in Motion</em></h1>
+      <p>Recap films, highlight reels, and behind-the-scenes moments from events across Houston.</p>
+    </div>
+  </header>
+
+  <!-- FEATURED VIDEO (filled in automatically from the first video marked featured: true) -->
+  <section id="featured">
+    <div class="section-inner">
+      <div class="section-label">Featured Film</div>
+      <div class="gold-rule" style="margin-bottom: 40px;"></div>
+      <div class="featured-grid" id="featured-grid"></div>
+    </div>
+  </section>
+
+  <!-- VIDEO LIBRARY -->
+  <section id="library">
+    <div class="section-inner">
+      <div class="library-head">
+        <div>
+          <div class="section-label">Video Library</div>
+          <h2 class="section-title">Stories from<br><em>the Room</em></h2>
+          <div class="gold-rule"></div>
+        </div>
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="video-grid" id="video-grid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="section-label">Ready to Work Together?</div>
+      <h2 class="section-title">Want a Film Like This<br><em>for Your Event?</em></h2>
+      <p>Photo and video coverage that tells the story of your event — delivered on time, ready to share.</p>
+      <div class="cta-actions">
+        <a href="https://forms.gle/7vLqgYg5Mn2J484h8" target="_blank" class="btn-primary">Book Your Event</a>
+        <a href="index.html#gallery" class="btn-outline">View Photo Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Lee Rivers Digital Art · Corporate Event Photographer Houston TX</p>
+      <div class="footer-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#gallery">Portfolio</a>
+        <a href="videos.html">Videos</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://forms.gle/7vLqgYg5Mn2J484h8" target="_blank">Book Now</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX (plays library videos full-size) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
+    <button class="lightbox-close" id="lightbox-close">Close ✕</button>
+    <div class="lightbox-inner" id="lightbox-inner">
+      <div class="v-frame" id="lightbox-frame"></div>
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ════════════════════════════════════════════════════════════════════
+       ✦ YOUR VIDEOS — EDIT THIS LIST ✦
+       ────────────────────────────────────────────────────────────────────
+       Each video is one { ... } block. Copy a block to add a new video.
+       Fill in ONE of these three to say where the video lives:
+
+         youtube: "dQw4w9WgXcQ"        ← the ID after "watch?v=" or "youtu.be/"
+                                          (Shorts work too: the ID after "/shorts/")
+         vimeo:   "123456789"          ← the number at the end of the Vimeo link
+         file:    "videos/recap.mp4"   ← an MP4 you upload to a "videos" folder
+                                          on GitHub (keep each file under 100 MB)
+
+       Optional fields:
+         poster:   image URL shown before play (YouTube makes one automatically)
+         vertical: true      ← for 9:16 Reels / Shorts / TikToks
+         featured: true      ← shows this one big at the top of the page
+         duration: "2:45"
+         client:   "Client name · Venue"
+
+       Category names become the filter buttons automatically.
+       A video with no youtube / vimeo / file shows a "Coming Soon" card.
+       ════════════════════════════════════════════════════════════════════ */
+    const VIDEOS = [
+      {
+        title:       "Lift Every Voice",
+        category:    "Event Recaps",
+        description: "Song, color, and celebration from Lift Every Voice at Wheeler Avenue Baptist Church.",
+        client:      "Wheeler Avenue Baptist Church · Houston, TX",
+        featured:    true,
+        vertical:    true,
+        file:        "videos/lift-every-voice-wabc.mp4",
+        poster:      "videos/lift-every-voice-wabc.jpg",
+        duration:    "0:20"
+      },
+      {
+        title:       "Commissioner Garcia's Casino Night",
+        category:    "Galas & Fundraisers",
+        description: "Lights, red carpet, and warm welcomes from Commissioner Garcia's Casino Night.",
+        vertical:    true,
+        file:        "videos/commissioners-casino.mp4",
+        poster:      "videos/commissioners-casino.jpg",
+        duration:    "0:42"
+      },
+      {
+        title:       "Fulbright Enrichment",
+        category:    "Conferences",
+        description: "Fulbright scholars in Houston: sessions, connections, and a group day at Space Center Houston.",
+        vertical:    true,
+        file:        "videos/fulbright-enrichment.mp4",
+        poster:      "videos/fulbright-enrichment.jpg",
+        duration:    "0:18"
+      }
+    ];
+    /* ════════════════ END OF VIDEO LIST — no edits needed below ════════════════ */
+
+    const PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>';
+    const CAM_SVG  = '<svg viewBox="0 0 24 24" stroke-width="1.4" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="1"/><path d="M16 10l6-3v10l-6-3z"/></svg>';
+
+    const esc = s => String(s || '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    const hasSource = v => !!(v.youtube || v.vimeo || v.file);
+
+    function posterFor(v) {
+      if (v.poster) return v.poster;
+      if (v.youtube) return 'https://i.ytimg.com/vi/' + encodeURIComponent(v.youtube) + '/hqdefault.jpg';
+      return '';
+    }
+
+    // Builds the actual player (only created on click, so the page loads fast)
+    function playerHTML(v) {
+      if (v.youtube) {
+        return '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.youtube) +
+               '?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="' + esc(v.title) + '"></iframe>';
+      }
+      if (v.vimeo) {
+        return '<iframe src="https://player.vimeo.com/video/' + encodeURIComponent(v.vimeo) +
+               '?autoplay=1&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="' + esc(v.title) + '"></iframe>';
+      }
+      return '<video src="' + esc(v.file) + '" controls autoplay playsinline' +
+             (v.poster ? ' poster="' + esc(v.poster) + '"' : '') + '></video>';
+    }
+
+    // The thumbnail + play button (or the Coming Soon placeholder)
+    function frameHTML(v, idx) {
+      const cls = 'v-frame' + (v.vertical ? ' vertical' : '');
+      if (!hasSource(v)) {
+        return '<div class="' + cls + '"><div class="v-placeholder">' + CAM_SVG + '<span>Video Coming Soon</span></div></div>';
+      }
+      const poster = posterFor(v);
+      const style = poster ? ' style="background-image:url(\'' + esc(poster) + '\')"' : '';
+      // Self-hosted MP4 without a poster: show its first frame as the thumbnail
+      const firstFrame = (!poster && v.file) ? '<video src="' + esc(v.file) + '#t=0.5" muted preload="metadata" playsinline></video>' : '';
+      return '<div class="' + cls + '"' + style + '>' + firstFrame +
+             '<button class="v-play" data-idx="' + idx + '" aria-label="Play ' + esc(v.title) + '">' +
+             '<span class="v-play-icon">' + PLAY_SVG + '</span></button>' +
+             (v.duration ? '<span class="v-duration">' + esc(v.duration) + '</span>' : '') +
+             '</div>';
+    }
+
+    // ── Featured ──
+    const featuredIdx = Math.max(0, VIDEOS.findIndex(v => v.featured));
+    const featured = VIDEOS[featuredIdx];
+    const featuredGrid = document.getElementById('featured-grid');
+    if (featured) {
+      featuredGrid.classList.toggle('is-vertical', !!featured.vertical);
+      featuredGrid.innerHTML =
+        '<div class="featured-media">' + frameHTML(featured, featuredIdx) + '</div>' +
+        '<div class="featured-copy">' +
+          '<div class="v-meta">' + esc(featured.category) + '</div>' +
+          '<h3>' + esc(featured.title) + '</h3>' +
+          '<p>' + esc(featured.description) + '</p>' +
+          (featured.client ? '<div class="featured-client">' + esc(featured.client) + '</div>' : '') +
+        '</div>';
+    } else {
+      document.getElementById('featured').style.display = 'none';
+    }
+
+    // ── Library + filters ──
+    const libraryVideos = VIDEOS.map((v, i) => ({ v, i })).filter(x => x.i !== featuredIdx);
+    const categories = ['All', ...new Set(libraryVideos.map(x => x.v.category).filter(Boolean))];
+    const filtersEl = document.getElementById('filters');
+    const gridEl = document.getElementById('video-grid');
+
+    function renderGrid(cat) {
+      const list = libraryVideos.filter(x => cat === 'All' || x.v.category === cat);
+      gridEl.innerHTML = list.length ? list.map(({ v, i }) =>
+        '<article class="v-card">' + frameHTML(v, i) +
+          '<div class="v-card-body">' +
+            '<div class="v-meta">' + esc(v.category) + '</div>' +
+            '<h3>' + esc(v.title) + '</h3>' +
+            (v.description ? '<p>' + esc(v.description) + '</p>' : '') +
+          '</div>' +
+        '</article>'
+      ).join('') : '<p class="v-empty">More videos coming soon.</p>';
+    }
+
+    if (categories.length > 2) {
+      filtersEl.innerHTML = categories.map(c =>
+        '<button class="filter-btn' + (c === 'All' ? ' active' : '') + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>'
+      ).join('');
+      filtersEl.addEventListener('click', e => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        filtersEl.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+        renderGrid(btn.dataset.cat);
+      });
+    }
+    if (!libraryVideos.length) document.getElementById('library').style.display = 'none';
+    renderGrid('All');
+
+    // ── Playback ──
+    const lightbox = document.getElementById('lightbox');
+    const lbInner = document.getElementById('lightbox-inner');
+    const lbFrame = document.getElementById('lightbox-frame');
+    const lbTitle = document.getElementById('lightbox-title');
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lbFrame.innerHTML = '';          // stops playback
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.v-play');
+      if (!btn) return;
+      const idx = +btn.dataset.idx;
+      const v = VIDEOS[idx];
+      if (idx === featuredIdx) {
+        // Featured plays in place
+        btn.parentElement.innerHTML = playerHTML(v);
+      } else {
+        lbInner.classList.toggle('vertical', !!v.vertical);
+        lbFrame.className = 'v-frame' + (v.vertical ? ' vertical' : '');
+        lbFrame.innerHTML = playerHTML(v);
+        lbTitle.textContent = v.title;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+  </script>
+
+</body>
+</html>
